@@ -1,0 +1,20 @@
+{
+    "name": "mysql-workbench/mwb-dom",
+    "description": "DOM of MySQL Workbench",
+    "type": "library",
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "MysqlWorkbench\\MwbDom\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SVGAnimate",
+            "email": "glash.gnome@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
+
