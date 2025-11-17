@@ -22,7 +22,7 @@ For example, the MwbDocument allow to querySelectorAll method in this code snipp
 ```PHP
 <?php
 
-$filepath = __DIR__.'/data/model.mwb';
+$filepath = __DIR__.'/data/sakila_full.mwb';
 $mwbDocument = \Mwb\Document::load($filepath);
 
 foreach ($mwbDocument->doc->documentElement->physicalModels[0]->catalog->schemata[0]->tables as $table ) {
