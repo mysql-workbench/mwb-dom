@@ -5,8 +5,11 @@
     "license": "GPL-3.0",
     "autoload": {
         "psr-4": {
-            "MysqlWorkbench\\MwbDom\\": "src/"
-        }
+            "Mwb\\": "src/"
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
     },
     "authors": [
         {
@@ -15,6 +18,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": ">=8.2",
+        "ext-zip": "*",
+    },
 }
 

@@ -1,5 +1,12 @@
 <?php
 
+if (!extension_loaded('zip')) {
+	throw new \Exception('Class ZipArchive is required in Mwb\Document.');
+	// Check our php.ini, zip must be enabled; extension=php_zip.dll
+	// Check your configure php --with-zip or --enable-zip
+	// Check dl('php_zip.so');
+}
+
 require_once __DIR__."/../src/Loader.php";
 require_once __DIR__."/../src/Document.php";
 
