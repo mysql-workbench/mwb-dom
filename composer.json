@@ -20,7 +20,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=8.2",
-        "ext-zip": "*",
+        "ext-zip": "*"
     },
 }
 
