@@ -171,7 +171,12 @@ class Loader {
 					$objectGrt[$nodeKey] = $nodeObjectGrt;
 					break;
 				case 'list':
-					$objectGrt[count($objectGrt)] = $nodeObjectGrt;
+					if ($nodeObjectGrt && $parentObjectGrt instanceof  \Mwb\Grt\Db\Schema) {
+						$objectGrt[$nodeObjectGrt->name] = $nodeObjectGrt;
+					} else {
+						$objectGrt[count($objectGrt)] = $nodeObjectGrt;
+					}
+					break;
 					break;
 				default:
 					if ($objectGrt instanceof \Mwb\Grt\Document) {
