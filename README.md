@@ -59,6 +59,7 @@ object(\Mwb\Grt\Document)#1 (2) {
                   ["name"]=> string(9) "companies"
                 ...
 ```
+## Usage
 
 For example, the MwbDocument class allow to quickly access document.mwb.xml(MySQL Worbench model)
 ```PHP
@@ -82,7 +83,7 @@ echo $schema->tables['users']->columns['id']->autoIncrement . PHP_EOL;
 ```
 
 
-## Usage
+## Go further
 Improve the use of `mysql-workbench/mwb-dom` by using `mysql-workbench/mwb-orm` :
 ```PHP
 <?php
