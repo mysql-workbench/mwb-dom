@@ -2,7 +2,11 @@
 The Document Object Model(DOM) connects MySQL Workbench model to scripts php by representing the structure of a document—such as the Class representing a Shema, EER diagram. Usually it refers to Shema, even though modeling EER Diagram, Layer, or View diagram as objects are part of the core of MySQL Workbenh software.
 
 ## A PHP binding of MySQL Workbench
-The DOM represents a document with a physical model. Each object of the model ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree layer. With them, you can change the document's structure, style, or content.
+The Document Object Model (MwbDocument) is a programming interface for continious integration. It represents the database so that programs can change the document content. The DOM represents the document as properties and arrays; that way, PHP programming language can interact with the document.
+
+### Origin
+The `mysql-workbench/mwb-dom` library was created using [reverse engineering](https://github.com/mysql-workbench/mwb-reverse-engineering) of the MySQL Workbench source code.
+Therefore, the methods and functions exposed for Python in MySQL Workbench are present in PHP.
 
 -- To be continue : Tables can also have event handlers attached to them. Once an event is triggered, the event handlers get executed. --
 
@@ -16,7 +20,7 @@ $ composer require mysql-workbench/mwb-dom "^1.0.0"
 ```
 
 ## Concepts
-The Document Object Model (MwbDocument) is a programming interface for continious integration. It represents the database so that programs can change the document content. The DOM represents the document as properties and arrays; that way, PHP programming language can interact with the document.
+The DOM represents a document with a physical model. Each object of the model ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree layer. With them, you can change the document's structure, style, or content.
 
 The `Mwb\Loader` class create an instance(of \ArrayObject or \Mwb\Grt\*) for each `<value >` using struct-name as class
 ### document.mwb.xml
