@@ -18,7 +18,7 @@ $ composer require mysql-workbench/mwb-dom "^1.0.0"
 ## Concepts
 The Document Object Model (MwbDocument) is a programming interface for continious integration. It represents the database so that programs can change the document content. The DOM represents the document as properties and arrays; that way, PHP programming language can interact with the document.
 
-
+document.mwb.xml
 ```xml
 <data grt_format="2.0" document_type="MySQL Workbench Model" version="1.4.4">
   <value type="object" struct-name="workbench.Document" id="362be786-bfc0-11ef-98ea-0242384af379">
@@ -38,6 +38,8 @@ The Document Object Model (MwbDocument) is a programming interface for continiou
                 </value>
                 ...
 ```
+
+var_dump
 ```php
 object(\Mwb\Grt\Document)#1 (2) {
   ["documentElement"]=> object(\Mwb\Grt\Workbench\Document)#2 {
