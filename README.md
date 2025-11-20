@@ -22,7 +22,7 @@ For example, the MwbDocument class allow to query all `Db\Table` in the document
 
 ```PHP
 <?php
-$grt_root_wb_doc = \Mwb\Document::load(__DIR__.'/sakila_full.mwb')->doc->documentElement;
+$grt_root_wb_doc = \Mwb\Document::load('./sakila_full.mwb')->doc->documentElement;// Relative path use getcwd()
 
 $schema = $grt_root_wb_doc.physicalModels[0].catalog.schemata[0]
 foreach ($schema->tables as $table ) {
