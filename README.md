@@ -18,6 +18,45 @@ $ composer require mysql-workbench/mwb-dom "^1.0.0"
 ## Concepts
 The Document Object Model (MwbDocument) is a programming interface for continious integration. It represents the database so that programs can change the document content. The DOM represents the document as properties and arrays; that way, PHP programming language can interact with the document.
 
+
+```xml
+<data grt_format="2.0" document_type="MySQL Workbench Model" version="1.4.4">
+  <value type="object" struct-name="workbench.Document" id="362be786-bfc0-11ef-98ea-0242384af379">
+    <value type="list" content-type="object" content-struct-name="workbench.physical.Model" key="physicalModels">
+      <value type="object" struct-name="workbench.physical.Model" id="362be78a-bfc0-11ef-98ea-0242384af379">
+        <value type="object" struct-name="db.mysql.Catalog" id="362be78b-bfc0-11ef-98ea-0242384af379" key="catalog">
+          <value type="list" content-type="object" content-struct-name="db.mysql.Schema" key="schemata">
+            <value type="object" struct-name="db.mysql.Schema" id="362be7aa-bfc0-11ef-98ea-0242384af379">
+              <value type="list" content-type="object" content-struct-name="db.mysql.Table" key="tables">
+                <value type="object" struct-name="db.mysql.Table" id="42948398-bfc0-11ef-98ea-0242384af379">
+                  <value type="string" key="avgRowLength"/>
+                  <value type="int" key="checksum">0</value>
+                  <value type="list" content-type="object" content-struct-name="db.mysql.Column" key="columns">
+                    ...
+                  </value>
+                  <value type="string" key="name">companies</value>
+                </value>
+                ...
+```
+```php
+object(\Mwb\Grt\Document)#1 (2) {
+  ["documentElement"]=> object(\Mwb\Grt\Workbench\Document)#2 {
+    ["physicalModels"]=> array()#3 [
+      [0]=> object(\Mwb\Grt\Workbench\Physical\Model)#4 {
+        ["catalog"]=> object(\Mwb\Grt\Db\Mysql\Catalog)#5 {
+          ["schemata"]=> array()#6 [
+            [0]=> object(\Mwb\Grt\Db\Mysql\Schema)#7 {
+              ["tables"]=> array()#8 [
+                [0]=> object(\Mwb\Grt\Db\Mysql\Table)#9 {
+                  ["avgRowLength"]=> string()#
+                  ["checksum"]=> int()
+                  ["columns"]=> array()# [
+                    ...
+                  ]
+                  ["name"]=> string(9) "companies"
+                ...
+```
+
 For example, the MwbDocument class allow to quickly access document.mwb.xml(MySQL Worbench model)
 ```PHP
 <?php
