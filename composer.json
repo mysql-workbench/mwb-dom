@@ -1,6 +1,7 @@
 {
     "name": "mysql-workbench/mwb-dom",
     "description": "DOM of MySQL Workbench",
+    "version": "1.0.0",
     "type": "library",
     "license": "GPL-3.0",
     "autoload": {
