@@ -15,34 +15,42 @@ $ composer require mysql-workbench/mwb-dom "^1.0.0"
 ```
 
 ## Concepts
-The Document Object Model (MwbDocument) is a programming interface for continious integration. It represents the database so that programs can change the document structure, style, and content. The DOM represents the document as properties and arrays; that way, PHP programming languages can interact with the page.
-MywDocument model is a document that can be either displayed in the browser window or as the XML source. In both cases, it is the same document but the Document Object Model (MwbDocument) representation allows it to be manipulated. As an object-oriented representation of the database model, it can be modified with a PHP such as script.
-For example, the MwbDocument allow to querySelectorAll method in this code snippet must return a list of all the Db_Table in the document:
+The Document Object Model (MwbDocument) is a programming interface for continious integration. It represents the database so that programs can change the document content. The DOM represents the document as properties and arrays; that way, PHP programming language can interact with the document.
+
+For example, the MwbDocument class allow to query all `Db\Table` in the document:
 
 ```PHP
 <?php
 
 $filepath = __DIR__.'/data/sakila_full.mwb';
 $mwbDocument = \Mwb\Document::load($filepath);
+$grt_root_wb_doc = $mwbDocument->doc->documentElement;
 
-foreach ($mwbDocument->doc->documentElement->physicalModels[0]->catalog->schemata[0]->tables as $table ) {
+foreach ($grt_root_wb_doc->physicalModels[0]->catalog->schemata[0]->tables as $table_name => $table ) {
   echo $table->name . '(' . gettype($table->owner) . ')' . PHP_EOL;
   foreach ($table->columns as $column) {
     echo ' - ' . $column->name . PHP_EOL;
   }
 }
+```
 
+As you would do with MySQL Workbench Scripting Shell
+```python
+# iterate through all tables from schema
+schema = grt.root.wb.doc.physicalModels[0].catalog.schemata[0]
+for table in schema.tables:
+    print table.name
 ```
 
 ## Usage
-Use `mysql-workbench/mwb-orm` instead of `mysql-workbench/mwb-dom` and improve `\Mwb` :
+Improve the use of `mysql-workbench/mwb-dom` by using `mysql-workbench/mwb-orm` :
 ```PHP
 <?php
 
 $filepath = __DIR__.'/data/model.mwb';
-$mwbDocument = \Mwb\Document::load($filepath);
+$mwbOrm = \Mwb\Orm\Document::load($filepath);
 
-foreach ($mwbDocument->getEntities() as $entity ) {
+foreach ($mwbOrm->getEntities() as $entity ) {
   echo $entity->getName() . PHP_EOL;
   echo $entity->getTable()->name . PHP_EOL;
 }
