@@ -1,9 +1,10 @@
 # A PHP DOM of MySQL Workbench (*.mwb)
 The Document Object Model(DOM) connects MySQL Workbench model to scripts php by representing the structure of a document—such as the Class representing a Shema, EER diagram. Usually it refers to Shema, even though modeling EER Diagram, Layer, or View diagram as objects are part of the core of MySQL Workbenh software.
 
+## A PHP binding of MySQL Workbench
 The DOM represents a document with a physical model. Each object of the model ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree layer. With them, you can change the document's structure, style, or content.
 
-Tables can also have event handlers attached to them. Once an event is triggered, the event handlers get executed.
+-- To be continue : Tables can also have event handlers attached to them. Once an event is triggered, the event handlers get executed. --
 
 ## Prerequist
  - Php 8.0 >+
