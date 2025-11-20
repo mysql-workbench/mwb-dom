@@ -1,20 +1,17 @@
 {
     "name": "mysql-workbench/mwb-dom",
-    "description": "DOM of MySQL Workbench",
+    "description": "DOM for MySQL Workbench",
     "version": "1.0.0",
     "type": "library",
     "license": "GPL-3.0",
     "autoload": {
         "psr-4": {
             "Mwb\\": "src/"
-        },
-        "exclude-from-classmap": [
-            "/test/"
-        ]
+        }
     },
     "authors": [
         {
-            "name": "SVGAnimate",
+            "name": "SVG Animate",
             "email": "glash.gnome@gmail.com"
         }
     ],
@@ -24,4 +21,3 @@
         "ext-zip": "*"
     }
 }
-
