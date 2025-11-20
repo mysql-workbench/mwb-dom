@@ -18,36 +18,26 @@ $ composer require mysql-workbench/mwb-dom "^1.0.0"
 ## Concepts
 The Document Object Model (MwbDocument) is a programming interface for continious integration. It represents the database so that programs can change the document content. The DOM represents the document as properties and arrays; that way, PHP programming language can interact with the document.
 
-For example, the MwbDocument class allow to query all `Db\Table` in the document:
-
+For example, the MwbDocument class allow to quickly access document.mwb.xml(MySQL Worbench model)
 ```PHP
 <?php
 $grt_root_wb_doc = \Mwb\Document::load('./sakila_full.mwb')->doc->documentElement;// Relative path use getcwd()
+```
 
+query all `Db\Table` in the document:
+You can iterate through all tables from schema as you would do with MySQL Workbench Scripting Shell
+```PHP
+<?php
 $schema = $grt_root_wb_doc.physicalModels[0].catalog.schemata[0]
 foreach ($schema->tables as $table ) {
   print $table->name . PHP_EOL;
 }
 ```
-
-  foreach ($table->columns as $column) {
-    echo ' - ' . $column->name . PHP_EOL;
-  }
-
-
-As you would do with MySQL Workbench Scripting Shell
-```python
-# iterate through all tables from schema
-schema = grt.root.wb.doc.physicalModels[0].catalog.schemata[0]
-for table in schema.tables:
-    print table.name
-```
-
-Another example for easily accessing your model
+Another example for easily accessing data.
 ```php
 <?php
 $schema = \Mwb\Document::load(__DIR__.'/sakila_full.mwb')->doc->documentElement->physicalModels[0].catalog.schemata[0];
-echo $schema->tables['users']->columns['id']->name . PHP_EOL;// `id`
+echo $schema->tables['users']->columns['id']->autoIncrement . PHP_EOL;
 ```
 
 
