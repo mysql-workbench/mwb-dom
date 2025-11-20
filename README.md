@@ -6,12 +6,12 @@ The DOM represents a document with a physical model. Each object of the model en
 Tables can also have event handlers attached to them. Once an event is triggered, the event handlers get executed.
 
 ## Prerequist
- - Php 7.2 >+
+ - Php 8.0 >+
  - MySQL Workbench 6.3 | 8.0
 
 ## Install
 ```console
-$ composer require mysql-workbench/mwb-dom
+$ composer require mysql-workbench/mwb-dom "^1.0.0"
 ```
 
 ## Concepts
