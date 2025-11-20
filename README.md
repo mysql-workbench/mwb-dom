@@ -21,14 +21,14 @@ The Document Object Model (MwbDocument) is a programming interface for continiou
 ### document.mwb.xml
 ```xml
 <data grt_format="2.0" document_type="MySQL Workbench Model" version="1.4.4">
-  <value type="object" struct-name="workbench.Document" id="362be786-bfc0-11ef-98ea-0242384af379">
+  <value type="object" struct-name="workbench.Document">
     <value type="list" content-type="object" content-struct-name="workbench.physical.Model" key="physicalModels">
-      <value type="object" struct-name="workbench.physical.Model" id="362be78a-bfc0-11ef-98ea-0242384af379">
-        <value type="object" struct-name="db.mysql.Catalog" id="362be78b-bfc0-11ef-98ea-0242384af379" key="catalog">
+      <value type="object" struct-name="workbench.physical.Model" >
+        <value type="object" struct-name="db.mysql.Catalog" key="catalog">
           <value type="list" content-type="object" content-struct-name="db.mysql.Schema" key="schemata">
-            <value type="object" struct-name="db.mysql.Schema" id="362be7aa-bfc0-11ef-98ea-0242384af379">
+            <value type="object" struct-name="db.mysql.Schema">
               <value type="list" content-type="object" content-struct-name="db.mysql.Table" key="tables">
-                <value type="object" struct-name="db.mysql.Table" id="42948398-bfc0-11ef-98ea-0242384af379">
+                <value type="object" struct-name="db.mysql.Table">
                   <value type="string" key="avgRowLength"/>
                   <value type="int" key="checksum">0</value>
                   <value type="list" content-type="object" content-struct-name="db.mysql.Column" key="columns">
