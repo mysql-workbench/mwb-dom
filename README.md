@@ -24,7 +24,6 @@ For example, the MwbDocument class allow to quickly access document.mwb.xml(MySQ
 $grt_root_wb_doc = \Mwb\Document::load('./sakila_full.mwb')->doc->documentElement;// Relative path use getcwd()
 ```
 
-query all `Db\Table` in the document:
 You can iterate through all tables from schema as you would do with MySQL Workbench Scripting Shell
 ```PHP
 <?php
