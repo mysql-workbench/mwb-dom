@@ -82,7 +82,7 @@ foreach ($schema->tables as $table ) {
 Another example for easily accessing data.
 ```php
 <?php
-$schema = \Mwb\Document::load(__DIR__.'/sakila_full.mwb')->doc->documentElement->physicalModels[0].catalog.schemata[0];
+$schema = $grt_root_wb_doc.physicalModels[0].catalog.schemata[0]
 echo $schema->tables['users']->columns['id']->autoIncrement . PHP_EOL;
 ```
 
