@@ -1,4 +1,6 @@
-# A PHP DOM of MySQL Workbench (*.mwb)
+# Description
+
+## A PHP DOM of MySQL Workbench (*.mwb)
 The Document Object Model(DOM) connects MySQL Workbench model to scripts php by representing the structure of a document—such as the Class representing a Shema, EER diagram. Usually it refers to Shema, even though modeling EER Diagram, Layer, or View diagram as objects are part of the core of MySQL Workbenh software.
 
 ## A PHP binding of MySQL Workbench
