@@ -21,17 +21,17 @@ The Document Object Model (MwbDocument) is a programming interface for continiou
 ### document.mwb.xml
 ```xml
 <data grt_format="2.0" document_type="MySQL Workbench Model" version="1.4.4">
-  <value type="object" struct-name="workbench.Document">
-    <value type="list" content-type="object" content-struct-name="workbench.physical.Model" key="physicalModels">
-      <value type="object" struct-name="workbench.physical.Model" >
-        <value type="object" struct-name="db.mysql.Catalog" key="catalog">
-          <value type="list" content-type="object" content-struct-name="db.mysql.Schema" key="schemata">
-            <value type="object" struct-name="db.mysql.Schema">
-              <value type="list" content-type="object" content-struct-name="db.mysql.Table" key="tables">
-                <value type="object" struct-name="db.mysql.Table">
+  <value struct-name="workbench.Document">
+    <value type="list" key="physicalModels">
+      <value struct-name="workbench.physical.Model" >
+        <value struct-name="db.mysql.Catalog" key="catalog">
+          <value type="list" key="schemata">
+            <value struct-name="db.mysql.Schema">
+              <value type="list" key="tables">
+                <value struct-name="db.mysql.Table">
                   <value type="string" key="avgRowLength"/>
                   <value type="int" key="checksum">0</value>
-                  <value type="list" content-type="object" content-struct-name="db.mysql.Column" key="columns">
+                  <value type="list" key="columns">
                     ...
                   </value>
                   <value type="string" key="name">companies</value>
