@@ -65,13 +65,13 @@ object(\Mwb\Grt\Document)#1 (2) {
 ```
 ## Usage
 
-For example, the MwbDocument class allow to quickly access document.mwb.xml(MySQL Worbench model)
+For example, the `\Mwb\Document` class allow to quickly access document.mwb.xml(MySQL Worbench model)
 ```PHP
 <?php
-$grt_root_wb_doc = \Mwb\Document::load('./sakila_full.mwb')->doc->documentElement;// Relative path use getcwd()
+$grt_root_wb_doc = \Mwb\Document::load('/sakila_full.mwb')->doc->documentElement;// Relative path use getcwd()
 ```
 
-You can iterate through all tables from schema as you would do with MySQL Workbench Scripting Shell
+You can iterate through all tables from schema as you would do with [MySQL Workbench Scripting Shell](https://dev.mysql.com/doc/workbench/en/wb-exploring-scripting-shell.html)
 ```PHP
 <?php
 $schema = $grt_root_wb_doc.physicalModels[0].catalog.schemata[0]
