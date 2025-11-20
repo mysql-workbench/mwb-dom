@@ -88,7 +88,10 @@ $schema = $grt_root_wb_doc.physicalModels[0].catalog.schemata[0]
 echo $schema->tables['users']->columns['id']->autoIncrement . PHP_EOL;
 ```
 
-
+## Contribute :
+Make a  QuickStart:
+ - [C.6.1 Tutorial: Generate PHP Code to Create a Connection with PDO_MySQL](https://dev.mysql.com/doc/workbench/en/wb-tutorial-plugins-php-pdo.html)
+ 
 ## Go further
 Improve the use of `mysql-workbench/mwb-dom` by using `mysql-workbench/mwb-orm` :
 ```PHP
