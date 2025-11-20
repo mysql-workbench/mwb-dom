@@ -21,18 +21,18 @@ For example, the MwbDocument class allow to query all `Db\Table` in the document
 
 ```PHP
 <?php
+$grt_root_wb_doc = \Mwb\Document::load(__DIR__.'/sakila_full.mwb')->doc->documentElement;
 
-$filepath = __DIR__.'/data/sakila_full.mwb';
-$mwbDocument = \Mwb\Document::load($filepath);
-$grt_root_wb_doc = $mwbDocument->doc->documentElement;
+$schema = $grt_root_wb_doc.physicalModels[0].catalog.schemata[0]
+foreach ($schema->tables as $table ) {
+  print $table->name . PHP_EOL;
+}
+```
 
-foreach ($grt_root_wb_doc->physicalModels[0]->catalog->schemata[0]->tables as $table_name => $table ) {
-  echo $table->name . '(' . gettype($table->owner) . ')' . PHP_EOL;
   foreach ($table->columns as $column) {
     echo ' - ' . $column->name . PHP_EOL;
   }
-}
-```
+
 
 As you would do with MySQL Workbench Scripting Shell
 ```python
@@ -41,6 +41,14 @@ schema = grt.root.wb.doc.physicalModels[0].catalog.schemata[0]
 for table in schema.tables:
     print table.name
 ```
+
+Another example for easily accessing your model
+```php
+<?php
+$schema = \Mwb\Document::load(__DIR__.'/sakila_full.mwb')->doc->documentElement->physicalModels[0].catalog.schemata[0];
+echo $schema->tables['users']->columns['id']->name . PHP_EOL;// `id`
+```
+
 
 ## Usage
 Improve the use of `mysql-workbench/mwb-dom` by using `mysql-workbench/mwb-orm` :
