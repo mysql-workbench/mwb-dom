@@ -3,10 +3,8 @@
 namespace Mwb;
 
 use \Mwb\Loader;
+use \Mwb\Exporter;
 use \Mwb\Grt\Document as GrtDocument;
-
-
-//use \Mwb\Grt\Document as GrtDocument;
 
 /**
  * Allow to parse a MySQL Workbench file (*.mwb)
@@ -78,5 +76,29 @@ class Document
 
         return $mwbDocument;
     }
+    public static function Export($filepath)
+    {
+        $zip = new \ZipArchive();
+        if (true !== $zip->open($filepath)) {
+        	throw new \RuntimeException("Impossible to open file '$filename'");
+        }
+        $mwbDocument = new self();
+
+        $mwbDocument->db[self::DATA_DB] = Null;
+        $mwbDocument->images['icon-service.png'] = Null;
+        $mwbDocument->notes['1'] = 'My note';
+
+        $content = $zip->getFromName(self::DOCUMENT_MWB_XML);
+        $zip->close();
+
+        if (false === $content) {
+        	throw new \RuntimeException('File "document.mwb.xml" not found in *.mwb');
+        }
+
+        $output = Exporter::ExportXml($content);
+
+        return $output;
+    }
+
 }
 
