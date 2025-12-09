@@ -2,14 +2,21 @@
 
 namespace Mwb\Grt\Db;
 
-use \Mwb\Grt\Db\SimpleDatatype;
-
 class UserDatatype extends \Mwb\Grt_Object
 {
-    public ?\Mwb\Grt\Db\SimpleDatatype $actualType = null;
+    /**
+     * @var $sqlDefinition ?string
+     */
+    public ?string $sqlDefinition = null;
 
+    /**
+     * @var $flags ?string
+     */
     public ?string $flags = null;
 
-    public ?string $sqlDefinition = null;
+    /**
+     * @var $actualType ?\Mwb\Grt\Db\SimpleDatatype
+     */
+    public ?\Mwb\Grt\Db\SimpleDatatype $actualType = null;
 }
 

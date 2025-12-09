@@ -2,10 +2,11 @@
 
 namespace Mwb\Grt\Eer;
 
-use \ArrayObject;
-
 class Entity extends \Mwb\Grt\Eer\Object
 {
+    /**
+     * @var $attribute ?\ArrayObject
+     */
     public ?\ArrayObject $attribute = null;
 }
 

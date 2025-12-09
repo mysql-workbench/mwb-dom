@@ -2,12 +2,20 @@
 
 namespace Mwb\Grt\Db\Mgmt;
 
-use \ArrayObject;
-
+/**
+ * specifies which privileges are available for this object type
+ */
 class PrivilegeMapping extends \Mwb\Grt_Object
 {
-    public ?\ArrayObject $privileges = null;
-
+    /**
+     * @var $structName ?string the struct of the database object
+     */
     public ?string $structName = null;
+
+    /**
+     * @var $privileges ?\ArrayObject the list of available privileges for this object
+     * type
+     */
+    public ?\ArrayObject $privileges = null;
 }
 

@@ -2,26 +2,34 @@
 
 namespace Mwb\Grt;
 
-//use \Mwb\Grt\Workbench\Document as WorkbenchDocument;
-use \Mwb\Grt\Version;
-
+/**
+ * GRT root element
+ */
 class Document
 {
-    public $format = '';
+    /**
+     * @var string $format
+     */
+    public ?string $format = null;
 
+    /**
+     * @var \Mwb\Grt\Version $version
+     */
     public ?\Mwb\Grt\Version $version = null;
 
     /**
-     * @var ?\Mwb\Grt\Workbench\Document $documentElement
+     * @var \Mwb\Grt\Workbench\Document $documentElement
      */
     public ?\Mwb\Grt\Workbench\Document $documentElement = null;
 
-    public array $notes = [
-        1 => 'My note',
-    ];
+    /**
+     * @var \ArrayObject $notes
+     */
+    public ?\ArrayObject $notes = null;
 
-    public array $db = [
-        'data.db',
-    ];
+    /**
+     * @var \ArrayObject $db
+     */
+    public ?\ArrayObject $db = null;
 }
 

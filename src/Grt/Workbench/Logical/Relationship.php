@@ -2,12 +2,20 @@
 
 namespace Mwb\Grt\Workbench\Logical;
 
-use \Mwb\Grt\Eer\Relationship;
-
+/**
+ * a model figure representing a relationship
+ */
 class Relationship extends \Mwb\Grt\Model\Figure
 {
-    public ?int $attributesExpanded = null;
-
+    /**
+     * @var $relationship ?\Mwb\Grt\Eer\Relationship the relationship that is
+     * represented
+     */
     public ?\Mwb\Grt\Eer\Relationship $relationship = null;
+
+    /**
+     * @var $attributesExpanded ?int indicates whether the columns list is expanded
+     */
+    public ?int $attributesExpanded = null;
 }
 

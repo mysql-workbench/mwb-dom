@@ -2,12 +2,16 @@
 
 namespace Mwb\Grt\Meta;
 
-use \Mwb\Grt\Db\DatabaseObject;
-
 class TaggedObject extends \Mwb\Grt_Object
 {
-    public ?string $description = null;
-
+    /**
+     * @var $object ?\Mwb\Grt\Db\DatabaseObject
+     */
     public ?\Mwb\Grt\Db\DatabaseObject $object = null;
+
+    /**
+     * @var $description ?string
+     */
+    public ?string $description = null;
 }
 

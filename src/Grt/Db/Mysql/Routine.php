@@ -2,14 +2,21 @@
 
 namespace Mwb\Grt\Db\Mysql;
 
-use \ArrayObject;
-
 class Routine extends \Mwb\Grt\Db\Routine
 {
-    public ?\ArrayObject $params = null;
+    /**
+     * @var $security ?string
+     */
+    public ?string $security = null;
 
+    /**
+     * @var $returnDatatype ?string
+     */
     public ?string $returnDatatype = null;
 
-    public ?string $security = null;
+    /**
+     * @var $params ?\ArrayObject
+     */
+    public ?\ArrayObject $params = null;
 }
 

@@ -2,13 +2,21 @@
 
 namespace Mwb\Grt\Ui;
 
-use \ArrayObject;
-use \Mwb\Grt\Model\Model;
-
 class ModelPanel extends \Mwb\Grt\TransientObject
 {
-    public ?\ArrayObject $customData = null;
-
+    /**
+     * @var $model ?\Mwb\Grt\Model\Model
+     */
     public ?\Mwb\Grt\Model\Model $model = null;
+
+    /**
+     * @var $commonSidebar ?\Mwb\Grt\Mforms\ObjectReference
+     */
+    public ?\Mwb\Grt\Mforms\ObjectReference $commonSidebar = null;
+
+    /**
+     * @var $customData ?\ArrayObject
+     */
+    public ?\ArrayObject $customData = null;
 }
 

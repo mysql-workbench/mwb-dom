@@ -2,27 +2,45 @@
 
 namespace Mwb\Grt\App;
 
-use \ArrayObject;
-use \Mwb\Grt\App\Document;
-use \Mwb\Grt\App\Info;
-use \Mwb\Grt\App\Options;
-use \Mwb\Grt\App\Registry;
-use \Mwb\Grt\App\Starters;
-
+/**
+ * a GRT application object
+ */
 class Application extends \Mwb\Grt_Object
 {
-    public ?\ArrayObject $customData = null;
-
+    /**
+     * @var $doc ?\Mwb\Grt\App\Document the document the application is working with
+     */
     public ?\Mwb\Grt\App\Document $doc = null;
 
+    /**
+     * @var $info ?\Mwb\Grt\App\Info information about the application
+     */
     public ?\Mwb\Grt\App\Info $info = null;
 
+    /**
+     * @var $options ?\Mwb\Grt\App\Options application options
+     */
     public ?\Mwb\Grt\App\Options $options = null;
 
+    /**
+     * @var $state ?\ArrayObject application state info, keys in format domain:option
+     */
+    public ?\ArrayObject $state = null;
+
+    /**
+     * @var $registry ?\Mwb\Grt\App\Registry information about the application
+     */
     public ?\Mwb\Grt\App\Registry $registry = null;
 
+    /**
+     * @var $starters ?\Mwb\Grt\App\Starters Application starters
+     */
     public ?\Mwb\Grt\App\Starters $starters = null;
 
-    public ?\ArrayObject $state = null;
+    /**
+     * @var $customData ?\ArrayObject a generic dictionary to hold additional
+     * information used by e.g. plugins
+     */
+    public ?\ArrayObject $customData = null;
 }
 

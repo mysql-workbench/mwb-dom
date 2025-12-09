@@ -2,16 +2,26 @@
 
 namespace Mwb\Grt\Db;
 
-use \Mwb\Grt\Db\DatabaseObject;
-
 class Synonym extends \Mwb\Grt\Db\DatabaseObject
 {
+    /**
+     * @var $isPublic ?int
+     */
     public ?int $isPublic = null;
 
+    /**
+     * @var $referencedObject ?\Mwb\Grt\Db\DatabaseObject
+     */
     public ?\Mwb\Grt\Db\DatabaseObject $referencedObject = null;
 
-    public ?string $referencedObjectName = null;
-
+    /**
+     * @var $referencedSchemaName ?string
+     */
     public ?string $referencedSchemaName = null;
+
+    /**
+     * @var $referencedObjectName ?string
+     */
+    public ?string $referencedObjectName = null;
 }
 

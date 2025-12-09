@@ -2,12 +2,16 @@
 
 namespace Mwb\Grt\Db;
 
-use \ArrayObject;
-
 class StructuredDatatype extends \Mwb\Grt\Db\DatabaseObject
 {
-    public ?\ArrayObject $distinctTypes = null;
-
+    /**
+     * @var $parentType ?\Mwb\Grt\Db\StructuredDatatype
+     */
     public ?\Mwb\Grt\Db\StructuredDatatype $parentType = null;
+
+    /**
+     * @var $distinctTypes ?\ArrayObject
+     */
+    public ?\ArrayObject $distinctTypes = null;
 }
 

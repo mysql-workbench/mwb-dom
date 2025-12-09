@@ -2,13 +2,21 @@
 
 namespace Mwb\Grt\Ui;
 
-use \ArrayObject;
-use \Mwb\Grt_Object;
-
 class ObjectEditor extends \Mwb\Grt\TransientObject
 {
-    public ?\ArrayObject $customData = null;
-
+    /**
+     * @var $object ?\Mwb\Grt_Object
+     */
     public ?\Mwb\Grt_Object $object = null;
+
+    /**
+     * @var $dockingPoint ?\Mwb\Grt\Mforms\ObjectReference
+     */
+    public ?\Mwb\Grt\Mforms\ObjectReference $dockingPoint = null;
+
+    /**
+     * @var $customData ?\ArrayObject
+     */
+    public ?\ArrayObject $customData = null;
 }
 

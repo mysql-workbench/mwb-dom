@@ -2,18 +2,41 @@
 
 namespace Mwb\Grt\Db;
 
-use \ArrayObject;
-
 class Index extends \Mwb\Grt\Db\DatabaseObject
 {
-    public ?\ArrayObject $columns = null;
+    /**
+     * @var $name string
+     */
+    public ?string $name = null;
 
-    public ?int $deferability = null;
-
-    public ?string $indexType = null;
-
+    /**
+     * @var $isPrimary ?int
+     */
     public ?int $isPrimary = null;
 
+    /**
+     * @var $deferability ?int
+     */
+    public ?int $deferability = null;
+
+    /**
+     * @var $unique ?int
+     */
     public ?int $unique = null;
+
+    /**
+     * @var $indexType ?string one of INDEX, PRIMARY, UNIQUE, FULLTEXT and SPATIAL
+     */
+    public ?string $indexType = null;
+
+    /**
+     * @var $columns ?\ArrayObject
+     */
+    public ?\ArrayObject $columns = null;
+
+    /**
+     * @var $comment ?string
+     */
+    public ?string $comment = null;
 }
 

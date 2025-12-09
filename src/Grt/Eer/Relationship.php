@@ -2,14 +2,21 @@
 
 namespace Mwb\Grt\Eer;
 
-use \ArrayObject;
-
 class Relationship extends \Mwb\Grt\Eer\Object
 {
-    public ?\ArrayObject $attribute = null;
+    /**
+     * @var $startMandatory ?int mandatory in the source table
+     */
+    public ?int $startMandatory = null;
 
+    /**
+     * @var $endMandatory ?int mandatory in the target table
+     */
     public ?int $endMandatory = null;
 
-    public ?int $startMandatory = null;
+    /**
+     * @var $attribute ?\ArrayObject
+     */
+    public ?\ArrayObject $attribute = null;
 }
 

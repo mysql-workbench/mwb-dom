@@ -2,19 +2,31 @@
 
 namespace Mwb\Grt\Db\Migration;
 
-use \ArrayObject;
-use \Mwb\Grt\Db\Mgmt\Rdbms;
-
 class DBPreferences extends \Mwb\Grt_Object
 {
-    public ?\ArrayObject $characterSetMapping = null;
+    /**
+     * @var $sourceRdbms ?\Mwb\Grt\Db\Mgmt\Rdbms
+     */
+    public ?\Mwb\Grt\Db\Mgmt\Rdbms $sourceRdbms = null;
 
-    public ?\ArrayObject $datatypeMapping = null;
-
+    /**
+     * @var $defaultValueMapping ?\ArrayObject
+     */
     public ?\ArrayObject $defaultValueMapping = null;
 
-    public ?\ArrayObject $options = null;
+    /**
+     * @var $datatypeMapping ?\ArrayObject
+     */
+    public ?\ArrayObject $datatypeMapping = null;
 
-    public ?\Mwb\Grt\Db\Mgmt\Rdbms $sourceRdbms = null;
+    /**
+     * @var $characterSetMapping ?\ArrayObject
+     */
+    public ?\ArrayObject $characterSetMapping = null;
+
+    /**
+     * @var $options ?\ArrayObject
+     */
+    public ?\ArrayObject $options = null;
 }
 

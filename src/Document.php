@@ -47,17 +47,34 @@ class Document
         $this->notes = [];
     }
 
-    public static function load($filepath)
+    public static function __callStatic($name, $arguments)
+    {
+        if ('Load'==$name) {
+		$mwbDocument = new self();
+		return $mwbDocument->_load(...$arguments);
+        } else if ('Export'==$name) {
+		$mwbDocument = new self();
+            return $mwbDocument->_export(...$arguments);
+        } else {
+        }
+    }
+
+    public function __call($name, $arguments)
+    {
+        if ('load'==$name) {
+            return $this->_load(...$arguments);
+        } else if ('export'==$name) {
+            return $this->_export(...$arguments);
+        } else {
+        }
+    }
+
+    private function _load($filepath)
     {
         $zip = new \ZipArchive();
         if (true !== $zip->open($filepath)) {
         	throw new \RuntimeException("Impossible to open file '$filename'");
         }
-        $mwbDocument = new self();
-
-        $mwbDocument->db[self::DATA_DB] = Null;
-        $mwbDocument->images['icon-service.png'] = Null;
-        $mwbDocument->notes['1'] = 'My note';
 
         $content = $zip->getFromName(self::DOCUMENT_MWB_XML);
         $zip->close();
@@ -66,27 +83,22 @@ class Document
         	throw new \RuntimeException('File "document.mwb.xml" not found in *.mwb');
         }
 
-        $mwbDocument->doc = Loader::LoadXml($content);
+        $this->doc = Loader::LoadXml($content);
         // TODO: try{}
 
         // TODO: $mwbDocument->db, $mwbDocument->images, $mwbDocument->notes
-        $mwbDocument->db[self::DATA_DB] = Null;
-        $mwbDocument->images['icon-service.png'] = Null;
-        $mwbDocument->notes['1'] = 'My note';
+        $this->db[self::DATA_DB] = Null;
+        $this->images['icon-service.png'] = Null;
+        $this->notes['1'] = 'My note';
 
-        return $mwbDocument;
+        return $this;
     }
-    public static function Export($filepath)
+    private function _export($filepath)
     {
         $zip = new \ZipArchive();
         if (true !== $zip->open($filepath)) {
         	throw new \RuntimeException("Impossible to open file '$filename'");
         }
-        $mwbDocument = new self();
-
-        $mwbDocument->db[self::DATA_DB] = Null;
-        $mwbDocument->images['icon-service.png'] = Null;
-        $mwbDocument->notes['1'] = 'My note';
 
         $content = $zip->getFromName(self::DOCUMENT_MWB_XML);
         $zip->close();

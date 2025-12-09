@@ -2,18 +2,34 @@
 
 namespace Mwb\Grt\Workbench;
 
-use \Mwb\Grt\Db\Migration\Migration;
-use \Mwb\Grt\Db\Mgmt\Management;
-use \ArrayObject;
-
+/**
+ * an object to store the workbench's data
+ */
 class Workbench extends \Mwb\Grt\App\Application
 {
+    /**
+     * @var $doc ?\Mwb\Grt\Workbench\Document the Workbench document
+     */
+    public ?\Mwb\Grt\App\Document $doc = null;
+
+    /**
+     * @var $docPath ?string the Workbench document path
+     */
     public ?string $docPath = null;
 
-    public ?\Mwb\Grt\Db\Migration\Migration $migration = null;
+    /**
+     * @var $sqlEditors ?\ArrayObject list of open SQL Editor instances
+     */
+    public ?\ArrayObject $sqlEditors = null;
 
+    /**
+     * @var $rdbmsMgmt ?\Mwb\Grt\Db\Mgmt\Management the RDBMS management information
+     */
     public ?\Mwb\Grt\Db\Mgmt\Management $rdbmsMgmt = null;
 
-    public ?\ArrayObject $sqlEditors = null;
+    /**
+     * @var $migration ?\Mwb\Grt\Db\Migration\Migration data for Migration Plugin
+     */
+    public ?\Mwb\Grt\Db\Migration\Migration $migration = null;
 }
 

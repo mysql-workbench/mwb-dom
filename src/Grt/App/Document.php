@@ -2,16 +2,24 @@
 
 namespace Mwb\Grt\App;
 
-use \ArrayObject;
-use \Mwb\Grt\App\DocumentInfo;
-use \Mwb\Grt\App\PageSettings;
-
+/**
+ * information about the application
+ */
 class Document extends \Mwb\Grt_Object
 {
-    public ?\ArrayObject $customData = null;
-
+    /**
+     * @var $info ?\Mwb\Grt\App\DocumentInfo user supplied info about the document
+     */
     public ?\Mwb\Grt\App\DocumentInfo $info = null;
 
+    /**
+     * @var $pageSettings ?\Mwb\Grt\App\PageSettings
+     */
     public ?\Mwb\Grt\App\PageSettings $pageSettings = null;
+
+    /**
+     * @var $customData ?\ArrayObject
+     */
+    public ?\ArrayObject $customData = null;
 }
 

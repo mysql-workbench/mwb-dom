@@ -2,14 +2,21 @@
 
 namespace Mwb\Grt\Db;
 
-use \ArrayObject;
-
 class CharacterSet extends \Mwb\Grt_Object
 {
-    public ?\ArrayObject $collations = null;
+    /**
+     * @var $description ?string
+     */
+    public ?string $description = null;
 
+    /**
+     * @var $defaultCollation ?string
+     */
     public ?string $defaultCollation = null;
 
-    public ?string $description = null;
+    /**
+     * @var $collations ?\ArrayObject
+     */
+    public ?\ArrayObject $collations = null;
 }
 

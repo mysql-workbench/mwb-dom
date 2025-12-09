@@ -18,5 +18,8 @@
     "require": {
         "php": ">=8.2",
         "ext-zip": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
     }
 }

@@ -4,20 +4,44 @@ namespace Mwb\Grt\Db;
 
 class ServerLink extends \Mwb\Grt\Db\DatabaseObject
 {
-    public ?string $host = null;
+    /**
+     * @var $wrapperName ?string the type of database server to connect to
+     */
+    public ?string $wrapperName = null;
 
-    public ?string $ownerUser = null;
-
-    public ?string $password = null;
-
-    public ?string $port = null;
-
-    public ?string $schema = null;
-
-    public ?string $socket = null;
-
+    /**
+     * @var $user ?string the user to connect with
+     */
     public ?string $user = null;
 
-    public ?string $wrapperName = null;
+    /**
+     * @var $password ?string the password to connect with
+     */
+    public ?string $password = null;
+
+    /**
+     * @var $host ?string the host name the server runs on
+     */
+    public ?string $host = null;
+
+    /**
+     * @var $schema ?string the name of the schema to use
+     */
+    public ?string $schema = null;
+
+    /**
+     * @var $socket ?string the socket the server runs on
+     */
+    public ?string $socket = null;
+
+    /**
+     * @var $port ?string the port the server runs on
+     */
+    public ?string $port = null;
+
+    /**
+     * @var $ownerUser ?string the owner
+     */
+    public ?string $ownerUser = null;
 }
 
