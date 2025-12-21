@@ -55,7 +55,10 @@ class MwbDocumentTest extends TestCase
 		$simpleType = $column->simpleType;
 		self::assertTrue($simpleType instanceof \Mwb\Grt\Db\SimpleDatatype);
 		//var_dump($simpleType->name);
-		//var_dump(get_class($simpleType));
+		//var_dump(get_class($simpleType->owner));
+		//var_dump($simpleType->owner->name);// "Mysql" => com.mysql.rdbms.mysql
+		//var_dump(gettype($simpleType->simpleDatatypes));
+
 
 		//var_dump(gettype($simpleType));
 		//print_r(array_keys((array)$column));
